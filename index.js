@@ -118,13 +118,14 @@ if (process.env.DB_DISABLED !== '1') {
         }
         console.log('db ' + connection.state);
     })
+} else {
+    console.log('db connected to server: ' + process.env.DB_HOST);
 }
 
 
 app.get('/getAll', (request, response) => {
-    const db = DbService.getDbServiceInstance();
-    const result = db.getAllData();
-    result
+    const srv = DbService.getDbServiceInstance();
+    srv.getAllData()
     .then(data => response.json({ data : data }))
     .catch(err => console.log(err));
 });

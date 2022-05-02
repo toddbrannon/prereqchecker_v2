@@ -118,22 +118,16 @@ if (process.env.DB_DISABLED !== '1') {
         }
         console.log('db ' + connection.state);
     })
-} else {
-    console.log('db connected to server: ' + process.env.DB_HOST);
-    const srv = DbService.getDbServiceInstance();
-    srv.getAllData()
 }
 
 
-// app.get('/getAll', (request, response) => {
-//     const db = DbService.getDbServiceInstance();
-//     const result = db.getAllData();
-//     // const emails = db.pushEmails();
-//     result
-//     // emails
-//     .then(data => response.json({ data : data }))
-//     .catch(err => console.log(err));
-// });
+app.get('/getAll', (request, response) => {
+    const db = DbService.getDbServiceInstance();
+    const result = db.getAllData();
+    result
+    .then(data => response.json({ data : data }))
+    .catch(err => console.log(err));
+});
 
 // listen for requests
 app.listen(process.env.PORT, () => {

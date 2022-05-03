@@ -44,15 +44,15 @@ let instance = null;
 
 //array with all queries
 const queries = [
-    new Query01()
-    //  new Query02(),
-    //  new Query03(),
-    //  new Query04a(),
-    //  new Query04c(),
-    //  new Query04d(),
-    //  new Query04f(),
-    //  new Query05(),
-    //  new Query06()
+    new Query01(),
+     new Query02(),
+     new Query03(),
+     new Query04a(),
+     new Query04c(),
+     new Query04d(),
+     new Query04f(),
+     new Query05(),
+     new Query06()
 ]
 
 class DbService {

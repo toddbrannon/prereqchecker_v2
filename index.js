@@ -136,7 +136,3 @@ app.listen(process.env.PORT, () => {
   });
 
 
-//   47.185.14.89
-
-
-
